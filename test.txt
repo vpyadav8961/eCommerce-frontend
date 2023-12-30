@@ -1,0 +1,30 @@
+
+    return (
+        <>
+            <div>
+                <h1>Product List</h1> 
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {products.map(product => (
+                            <tr key={product.id}>
+                                <td>{product.product_name}</td>
+                                <td>${product.product_description}</td>
+                                <td>{product.price}</td>
+                                <td><button onClick={()=> addToCart(product.id)}>Add to Cart</button></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+        </>
+
+    );
